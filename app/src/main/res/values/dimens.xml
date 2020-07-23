@@ -2,5 +2,8 @@
 <resources>
 
     <dimen name="alto">80dp</dimen>
+    <dimen name="toolbarAlto">30dp</dimen>
+    <dimen name="altoImageViewHome">150dp</dimen>
+    <dimen name="marginHomeSubtitle">10dp</dimen>
 
 </resources>
