@@ -1,6 +1,8 @@
 package com.platzi.platziconf2.view.ui.fragments.dialogFragments
 
+import android.content.Intent
 import android.graphics.Color
+import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -37,6 +39,20 @@ class LocationDetailDialogFragment : DialogFragment() {
         tvDetailLocationPlace.text = location.name
         tvDetailLocationAddress.text = location.address
         tvDetailLocationPhone.text = location.phone
+        tvDetailLocationPhone.setOnClickListener {
+            val intentPhone = Intent(Intent.ACTION_DIAL).apply {
+                data = Uri.parse("tel: ${location.phone}")
+            }
+            startActivity(intentPhone)
+        }
         tvDetailLocationWebsite.text = location.website
+        tvDetailLocationWebsite.setOnClickListener {
+            val intentWeb = Intent(Intent.ACTION_VIEW).apply {
+                data = Uri.parse(location.website)
+            }
+            startActivity(intentWeb)
+        }
+
+
     }
 }
