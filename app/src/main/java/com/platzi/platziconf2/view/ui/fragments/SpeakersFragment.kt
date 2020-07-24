@@ -30,6 +30,7 @@ class SpeakersFragment : Fragment(), SpeakerItemClickListener {
         super.onViewCreated(view, savedInstanceState)
         viewModelSpeakers = ViewModelProviders.of(this).get(SpeakersViewModel::class.java)
         viewModelSpeakers.refreshSpeakers()
+
         adapterSpeakers = SpeakerAdapter(this)
 
         rvSpeakers.apply {
