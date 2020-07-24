@@ -12,7 +12,6 @@ import androidx.fragment.app.DialogFragment
 import com.platzi.platziconf2.R
 import com.platzi.platziconf2.model.Location
 import kotlinx.android.synthetic.main.fragment_location_detail_dialog.*
-import kotlinx.android.synthetic.main.fragment_speakers_detail_dialog.*
 
 class LocationDetailDialogFragment : DialogFragment() {
 
@@ -32,8 +31,6 @@ class LocationDetailDialogFragment : DialogFragment() {
         toolBarLocationDetail.setNavigationOnClickListener {
             dismiss()
         }
-
-
         val location = Location()
         toolBarLocationDetail.title = location.name
         tvDetailLocationPlace.text = location.name
@@ -47,12 +44,9 @@ class LocationDetailDialogFragment : DialogFragment() {
         }
         tvDetailLocationWebsite.text = location.website
         tvDetailLocationWebsite.setOnClickListener {
-            val intentWeb = Intent(Intent.ACTION_VIEW).apply {
-                data = Uri.parse(location.website)
-            }
-            startActivity(intentWeb)
+            val intentWeb = Intent(Intent.ACTION_VIEW)
+                intentWeb.data = Uri.parse(location.website)
+                startActivity(intentWeb)
         }
-
-
     }
 }
