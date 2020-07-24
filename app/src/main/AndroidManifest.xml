@@ -9,8 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.activities.SplashActivity"></activity>
-        <activity android:name=".MainActivity">
+        <activity android:name="com.platzi.platziconf2.view.ui.activities.SplashActivity"></activity>
+        <activity android:name=".view.ui.activities.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

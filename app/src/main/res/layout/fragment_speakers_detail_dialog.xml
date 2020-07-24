@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/shape_parrafo"
     android:layout_margin="15dp"
-    tools:context=".ui.fragments.dialogFragments.SpeakersDetailDialogFragment">
+    tools:context=".view.ui.fragments.dialogFragments.SpeakersDetailDialogFragment">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
