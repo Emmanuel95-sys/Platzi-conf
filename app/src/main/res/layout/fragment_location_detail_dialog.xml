@@ -11,19 +11,15 @@
         android:layout_height="wrap_content">
 
         <Toolbar
-            android:id="@+id/toolBarMain"
+            android:id="@+id/toolBarLocationDetail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="@dimen/toolbarAlto"
-                android:src="@drawable/logo_platzi_conf" />
         </Toolbar>
     </com.google.android.material.appbar.AppBarLayout>
-
     <FrameLayout
         android:layout_width="match_parent"
+        android:background="@android:color/white"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
         android:layout_height="match_parent">
 
         <ScrollView
@@ -103,11 +99,7 @@
                             tools:text="Sitio Web" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
-
             </LinearLayout>
-
-
         </ScrollView>
     </FrameLayout>
-
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
