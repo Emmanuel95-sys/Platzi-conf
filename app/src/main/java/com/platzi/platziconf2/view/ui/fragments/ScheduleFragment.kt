@@ -5,57 +5,71 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.os.bundleOf
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProviders
+import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
 
 import com.platzi.platziconf2.R
+import com.platzi.platziconf2.model.Conference
+import com.platzi.platziconf2.view.adapter.ScheduleAdapter
+import com.platzi.platziconf2.view.adapter.ScheduleClickListener
+import com.platzi.platziconf2.viewmodel.ScheduleViewModel
+import kotlinx.android.synthetic.main.fragment_schedule.*
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
+//hay que implementar el evento click
+class ScheduleFragment : Fragment(), ScheduleClickListener {
 
-/**
- * A simple [Fragment] subclass.
- * Use the [ScheduleFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
-class ScheduleFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+    //acceso a los datos de view model y firestore
+    private lateinit var adapterSchedule: ScheduleAdapter
+    private lateinit var viewModelSchedule :ScheduleViewModel
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.fragment_schedule, container, false)
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment ScheduleFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            ScheduleFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        //necesitamos hcer uso del ciclo de vida de view model
+        //tenemos que agregar dos penendencias.
+        //nos permite observar activamente los datos y acceder a la informacion
+        viewModelSchedule = ViewModelProviders.of(this).get(ScheduleViewModel::class.java)
+
+        //acceder a los metodos del viewModel
+        viewModelSchedule.refreshSchedule()
+        //crear una instancia del adaptador
+        adapterSchedule = ScheduleAdapter(this)
+
+        //atributos al recycler view
+        rvSchedule.apply {
+            layoutManager = LinearLayoutManager(view.context, LinearLayoutManager.VERTICAL, false)
+            adapter = adapterSchedule
+        }
+        //observacion de los datos
+        observeViewModel()
+
+    }
+
+    private fun observeViewModel() {
+        //observar cosntantemente la informacioon en los datos de rv
+        //monitoreando en tiempo real si hay cambios en la informacion.
+        //y en caunto ocurra un cambio en ese instante voy a actualizar mi Interfaz de usuario
+        viewModelSchedule.listSchedule.observe(this, Observer<List<Conference>>{conferences ->
+            adapterSchedule.updateDataConferences(conferences)
+        })
+
+        //progressBar
+        viewModelSchedule.isLoading.observe(this, Observer<Boolean>{isLoading ->
+            if(isLoading != null ){
+                progressBarSchedule.visibility = View.INVISIBLE
             }
+        })
+    }
+//en este metodo capturamos el objeto al hacer click en el y lo enviamos a la vista de detalle
+    override fun onConferenceClick(conference: Conference, position: Int) {
+        val bundleConference = bundleOf("conference" to conference)
+        findNavController().navigate(R.id.scheduleDetailDialogFragment, bundleConference)
     }
 }

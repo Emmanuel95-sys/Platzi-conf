@@ -8,6 +8,7 @@ import com.platzi.platziconf2.network.FireStoreService
 import java.lang.Exception
 
 //se encarga de comunicarse con firestore y UI
+//las calses View model DEBEN HEREDAR de viewModel()
 class ScheduleViewModel : ViewModel() {
     val fireStoreService = FireStoreService()
     //fusioando viewModel con LiveData
