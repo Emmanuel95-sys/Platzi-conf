@@ -27,6 +27,8 @@ class ScheduleDetailDialogFragment : DialogFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        //congigurando la toolBar
+
         toolBarScheduleDetail.navigationIcon = ContextCompat.getDrawable(view.context, R.drawable.ic_close)
         toolBarScheduleDetail.setTitleTextColor(Color.WHITE)
         toolBarScheduleDetail.setNavigationOnClickListener {
@@ -46,9 +48,10 @@ class ScheduleDetailDialogFragment : DialogFragment() {
         tvDetailConferenceHour.text = date
     }
 
-    //margenes de toda la pantalla
+    //expander dialog fragment a pantalla completa
     override fun onStart() {
         super.onStart()
         dialog?.window?.setLayout(ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.MATCH_PARENT )
     }
+
 }

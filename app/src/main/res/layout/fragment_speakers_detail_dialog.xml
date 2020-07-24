@@ -1,76 +1,103 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/shape_parrafo"
-    android:layout_margin="15dp"
-    tools:context=".view.ui.fragments.dialogFragments.SpeakersDetailDialogFragment">
+    android:background="@android:color/white"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".view.ui.fragments.dialogFragments.ScheduleDetailDialogFragment">
 
-    <androidx.cardview.widget.CardView
+    <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="4dp"
-        app:cardCornerRadius="4dp"
-        app:cardElevation="4dp">
+        >
+        <Toolbar
+            android:id="@+id/toolBarSpeakerDetail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
+        </Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center_horizontal"
-            android:orientation="vertical">
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:background="@drawable/shape_parrafo"
+            android:layout_margin="15dp"
+            tools:context=".view.ui.fragments.dialogFragments.SpeakersDetailDialogFragment">
 
-            <de.hdodenhof.circleimageview.CircleImageView
-                android:layout_width="@dimen/altoImageViewHome"
-                android:layout_height="@dimen/altoImageViewHome"
-                android:layout_margin="6dp"
-                android:scaleType="centerCrop"
-                android:src="@drawable/platzi_conf_2" />
-
-            <TextView
-                android:id="@+id/tvSpeakersDetailDialogName"
-                android:layout_width="wrap_content"
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="4dp"
-                android:textColor="@color/colorPrimaryDark"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                tools:text="Freddy Vega" />
+                app:cardCornerRadius="4dp"
+                app:cardElevation="4dp">
 
-            <TextView
-                android:id="@+id/tvSpeakersDetailDialogJobTitle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="4dp"
-                android:textColor="@color/colorPrimaryDark"
-                android:textSize="20sp"
-                tools:text="CEO" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/tvSpeakersDetailDialogCompanyName"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="4dp"
-                android:textColor="@color/colorPrimaryDark"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                tools:text="Platzi" />
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/ivSpeakerDetail"
+                        android:layout_width="@dimen/altoImageViewHome"
+                        android:layout_height="@dimen/altoImageViewHome"
+                        android:layout_margin="6dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/platzi_conf_2" />
 
-            <ImageView
-                android:id="@+id/tvSpeakersDetailDialogTwitterIcon"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_icons_twitter" />
+                    <TextView
+                        android:id="@+id/tvSpeakersDetailDialogName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="4dp"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        tools:text="Freddy Vega" />
 
-            <TextView
-                android:id="@+id/tvSpeakersDetailDialogDescription"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:textColor="@color/colorPrimary"
-                android:textSize="15sp"
-                tools:text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book" />
+                    <TextView
+                        android:id="@+id/tvSpeakersDetailDialogJobTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="4dp"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textSize="20sp"
+                        tools:text="CEO" />
+
+                    <TextView
+                        android:id="@+id/tvSpeakersDetailDialogCompanyName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="4dp"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        tools:text="Platzi" />
+
+                    <ImageView
+                        android:id="@+id/tvSpeakersDetailDialogTwitterIcon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_icons_twitter" />
+
+                    <TextView
+                        android:id="@+id/tvSpeakersDetailDialogBio"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="15sp"
+                        tools:text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
         </LinearLayout>
-    </androidx.cardview.widget.CardView>
-</LinearLayout>
+
+    </ScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

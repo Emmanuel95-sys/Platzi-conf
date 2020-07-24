@@ -57,4 +57,5 @@ class SpeakersFragment : Fragment(), SpeakerItemClickListener {
         val clickedSpeaker = bundleOf("speaker" to speaker)
         findNavController().navigate(R.id.speakersDetailDialogFragment, clickedSpeaker)
     }
+
 }
