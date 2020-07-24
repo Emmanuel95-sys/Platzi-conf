@@ -15,8 +15,13 @@ import kotlinx.android.synthetic.main.fragment_schedule_detail_dialog.*
 import java.text.SimpleDateFormat
 
 class ScheduleDetailDialogFragment : DialogFragment() {
+    //settear el estilo
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setStyle(STYLE_NORMAL, R.style.FullScreenDialogStyle)
+    }
 
-     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.fragment_schedule_detail_dialog, container, false)
     }
 
@@ -39,8 +44,11 @@ class ScheduleDetailDialogFragment : DialogFragment() {
         val simpleDateFormat = SimpleDateFormat(pattern)
         val date = simpleDateFormat.format(clickedConference.datetime)
         tvDetailConferenceHour.text = date
-
     }
 
-
+    //margenes de toda la pantalla
+    override fun onStart() {
+        super.onStart()
+        dialog?.window?.setLayout(ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.MATCH_PARENT )
+    }
 }
