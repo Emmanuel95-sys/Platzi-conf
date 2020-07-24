@@ -4,6 +4,8 @@ import com.platzi.platziconf2.model.Speaker
 
 interface SpeakerItemClickListener {
 
-    fun onSpeakerClickListener(speaker: Speaker, position : Int)
+    fun onSpeakerClickListener(speaker: Speaker, position : Int){
+
+    }
 
 }

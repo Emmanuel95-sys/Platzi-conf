@@ -21,7 +21,7 @@ import kotlinx.android.synthetic.main.fragment_schedule.*
 //hay que implementar el evento click
 class ScheduleFragment : Fragment(), ScheduleClickListener {
 
-    //acceso a los datos de view model y firestore
+    //acceso a los datos de view model
     private lateinit var adapterSchedule: ScheduleAdapter
     private lateinit var viewModelSchedule :ScheduleViewModel
 
@@ -63,13 +63,13 @@ class ScheduleFragment : Fragment(), ScheduleClickListener {
         //progressBar
         viewModelSchedule.isLoading.observe(this, Observer<Boolean>{isLoading ->
             if(isLoading != null ){
-                progressBarSchedule.visibility = View.INVISIBLE
+                rlProgressBarSchedule.visibility = View.INVISIBLE
             }
         })
     }
 //en este metodo capturamos el objeto al hacer click en el y lo enviamos a la vista de detalle
     override fun onConferenceClick(conference: Conference, position: Int) {
-        val bundleConference = bundleOf("conference" to conference)
-        findNavController().navigate(R.id.scheduleDetailDialogFragment, bundleConference)
+        val clickedConference = bundleOf("conference" to conference)
+        findNavController().navigate(R.id.scheduleDetailDialogFragment, clickedConference)
     }
 }
