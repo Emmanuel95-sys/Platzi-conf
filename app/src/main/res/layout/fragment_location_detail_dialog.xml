@@ -53,49 +53,49 @@
                             android:layout_margin="5dp"
                             android:textColor="@color/colorPrimary"
                             android:textSize="30sp"
+                            android:textAlignment="center"
                             android:textStyle="bold"
                             tools:text="Centro cultural Roberto Cantoral" />
                         <TextView
                             android:id="@+id/tvDetailLocationAddress"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="5dp"
+                            android:layout_height="50dp"
+                            android:gravity="center_vertical"
                             android:drawableStart="@drawable/ic_location"
                             android:drawablePadding="10dp"
                             android:textColor="@color/colorPrimary"
-                            android:textSize="20sp"
-                            android:textStyle="bold"
+                            android:textSize="12sp"
                             tools:text="Direccion del lugar" />
                         <View
                             android:layout_width="match_parent"
-                            android:layout_height="2dp"
+                            android:layout_height="1dp"
                             android:background="@color/colorPrimary" />
                         <TextView
                             android:id="@+id/tvDetailLocationPhone"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="5dp"
+                            android:layout_height="50dp"
+                            android:layout_margin="10dp"
+                            android:gravity="center_vertical"
                             android:drawableStart="@drawable/ic_local_phone"
                             android:drawablePadding="10dp"
                             android:textColor="@color/colorPrimary"
-                            android:textSize="20sp"
-                            android:textStyle="bold"
+                            android:textSize="14sp"
                             tools:text="Telefono del lugar" />
                         <View
                             android:layout_width="match_parent"
-                            android:layout_height="2dp"
+                            android:layout_height="1dp"
                             android:background="@color/colorPrimary" />
 
                         <TextView
                             android:id="@+id/tvDetailLocationWebsite"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="5dp"
+                            android:layout_height="50dp"
+                            android:layout_margin="10dp"
+                            android:gravity="center_vertical"
                             android:drawableStart="@drawable/ic_link"
                             android:drawablePadding="10dp"
                             android:textColor="@color/colorPrimary"
-                            android:textSize="20sp"
-                            android:textStyle="bold"
+                            android:textSize="14sp"
                             tools:text="Sitio Web" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>

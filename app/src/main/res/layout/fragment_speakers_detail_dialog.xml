@@ -26,8 +26,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            android:background="@drawable/shape_parrafo"
-            android:layout_margin="15dp"
+            android:layout_margin="12dp"
             tools:context=".view.ui.fragments.dialogFragments.SpeakersDetailDialogFragment">
 
             <androidx.cardview.widget.CardView
@@ -83,7 +82,7 @@
                     <ImageView
                         android:id="@+id/tvSpeakersDetailDialogTwitterIcon"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_height="40dp"
                         android:src="@drawable/ic_icons_twitter" />
 
                     <TextView

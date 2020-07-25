@@ -1,40 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="4dp"
+    app:cardCornerRadius="4dp"
+    app:cardElevation="4dp"
+    android:background="@drawable/shape_parrafo"
     xmlns:tools="http://schemas.android.com/tools">
     <LinearLayout
-        android:layout_width="0dp"
-        android:layout_margin="5dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="4dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:orientation="vertical">
-
-        <TextView
-            android:id="@+id/tvItemScheduleHour"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            tools:text = "00:00"
-            android:gravity="end|bottom"
-            android:textSize="30sp"
-            android:textColor="@color/colorAccent"
-            android:textStyle="bold"/>
-        <TextView
-            android:id="@+id/tvItemScheduleAMPM"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            tools:text="A.M"
-            android:gravity="right|top"
-            android:textSize="20sp"
-            android:textColor="@color/colorPrimary" />
-
-    </LinearLayout>
+        >
         <LinearLayout
-        android:layout_margin="5dp"
-        android:layout_width="0dp"
-        android:layout_weight="3"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+            android:layout_width="0dp"
+            android:layout_margin="5dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvItemScheduleHour"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text = "00:00"
+                android:gravity="end|bottom"
+                android:textSize="30sp"
+                android:textColor="@color/colorAccent"
+                android:textStyle="bold"/>
+            <TextView
+                android:id="@+id/tvItemScheduleAMPM"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="A.M"
+                android:gravity="right|top"
+                android:textSize="20sp"
+                android:textColor="@color/colorPrimary" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_margin="5dp"
+            android:layout_width="0dp"
+            android:layout_weight="3"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
             <TextView
                 android:id="@+id/tvItemScheduleConferenceName"
                 android:layout_width="match_parent"
@@ -65,12 +77,8 @@
                 android:ellipsize="end"
                 android:lines="1"
                 android:background="@drawable/shape_topico"/>
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="2dp"
-                android:background="@color/colorAccent"/>
-
-
         </LinearLayout>
 
-</LinearLayout>
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

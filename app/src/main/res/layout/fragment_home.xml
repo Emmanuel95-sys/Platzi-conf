@@ -18,11 +18,10 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:cardCornerRadius="4dp"
-                app:cardElevation="4dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="6dp"
                 android:layout_margin="15dp">
                 <LinearLayout
-                    android:background="@drawable/shape_parrafo"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
@@ -34,7 +33,7 @@
                         android:src="@drawable/banner_platzi_conf"/>
                     <View
                         android:layout_width="match_parent"
-                        android:layout_height="2dp"
+                        android:layout_height="1dp"
                         android:background="@color/colorPrimary"/>
                     <TextView
                         android:layout_width="match_parent"
@@ -49,7 +48,7 @@
                         android:layout_marginTop="@dimen/marginHomeSubtitle"/>
                     <View
                         android:layout_width="match_parent"
-                        android:layout_height="2dp"
+                        android:layout_height="1dp"
                         android:background="@color/colorPrimary"/>
                     <TextView
                         android:layout_width="match_parent"
@@ -58,6 +57,7 @@
                         android:textSize="15sp"
                         android:textColor="@color/colorPrimaryDark"
                         android:layout_marginRight="@dimen/marginHomeSubtitle"
+                        android:layout_marginBottom="10dp"
                         android:layout_marginLeft="@dimen/marginHomeSubtitle"
                         android:layout_marginTop="@dimen/marginHomeSubtitle"/>
 
@@ -67,12 +67,11 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:cardCornerRadius="4dp"
-                app:cardElevation="4dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="6dp"
                 android:layout_margin="15dp">
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:background="@drawable/shape_parrafo"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
@@ -84,7 +83,7 @@
                         android:src="@drawable/platzi_conf_2"/>
                     <View
                         android:layout_width="match_parent"
-                        android:layout_height="2dp"
+                        android:layout_height="1dp"
                         android:background="@color/colorPrimary"/>
                     <TextView
                         android:layout_width="match_parent"
@@ -99,7 +98,7 @@
                         android:layout_marginTop="@dimen/marginHomeSubtitle"/>
                     <View
                         android:layout_width="match_parent"
-                        android:layout_height="2dp"
+                        android:layout_height="1dp"
                         android:background="@color/colorPrimary"/>
                     <TextView
                         android:layout_width="match_parent"
@@ -109,6 +108,7 @@
                         android:textColor="@color/colorPrimaryDark"
                         android:layout_marginRight="@dimen/marginHomeSubtitle"
                         android:layout_marginLeft="@dimen/marginHomeSubtitle"
+                        android:layout_marginBottom="10dp"
                         android:layout_marginTop="@dimen/marginHomeSubtitle"/>
 
                 </LinearLayout>
@@ -116,11 +116,10 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:cardCornerRadius="4dp"
-                app:cardElevation="4dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp"
                 android:layout_margin="15dp">
                 <LinearLayout
-                    android:background="@drawable/shape_parrafo"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
@@ -133,7 +132,7 @@
                         android:src="@drawable/platzi_conf_3"/>
                     <View
                         android:layout_width="match_parent"
-                        android:layout_height="2dp"
+                        android:layout_height="1dp"
                         android:background="@color/colorPrimary"/>
                     <TextView
                         android:layout_width="match_parent"
@@ -148,7 +147,7 @@
                         android:layout_marginTop="@dimen/marginHomeSubtitle"/>
                     <View
                         android:layout_width="match_parent"
-                        android:layout_height="2dp"
+                        android:layout_height="1dp"
                         android:background="@color/colorPrimary"/>
                     <TextView
                         android:layout_width="match_parent"
@@ -158,6 +157,7 @@
                         android:textColor="@color/colorPrimaryDark"
                         android:layout_marginRight="@dimen/marginHomeSubtitle"
                         android:layout_marginLeft="@dimen/marginHomeSubtitle"
+                        android:layout_marginBottom="10dp"
                         android:layout_marginTop="@dimen/marginHomeSubtitle"/>
 
                 </LinearLayout>
