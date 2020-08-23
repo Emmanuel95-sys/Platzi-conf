@@ -37,6 +37,7 @@ class ScheduleDetailDialogFragment : DialogFragment() {
 
         //obteniendo el objeto enviado desde el cronograma
         val clickedConference = arguments?.getSerializable("conference") as Conference
+
         toolBarScheduleDetail.title = clickedConference.title
         tvScheduleDetailTitle.text = clickedConference.title
         tvDetailConferenceNameSpeaker.text = clickedConference.speaker
